@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Shake Effect Form</title>
+  <style>
+    @keyframes shake {
+      0% { transform: translateX(0); }
+      25% { transform: translateX(-5px); }
+      50% { transform: translateX(5px); }
+      75% { transform: translateX(-5px); }
+      100% { transform: translateX(0); }
+    }
+
+    .shake {
+      animation: shake 0.4s;
+    }
+
+    #error {
+      color: red;
+    }
+  </style>
+</head>
+<body>
+
+  <form id="myForm" onsubmit="return validateForm()" action="/action_page.php">
+    <label for="fname">First name:</label><br>
+    <input type="text" id="fname" name="fname"><br>
+
+    <label for="lname">Last name:</label><br>
+    <input type="text" id="lname" name="lname"><br><br>
+
+    <p id="error"></p>
+
+    <input type="submit" value="Submit">
+    <p>▶ Adds shake effect using CSS animation.</p>
+    <p>▶ More engaging for users.</p>
+  </form>
+
+  <script>
+    function validateForm() {
+      const form = document.getElementById("myForm");
+      const fname = document.getElementById("fname").value.trim();
+      const lname = document.getElementById("lname").value.trim();
+      const error = document.getElementById("error");
+
+      if (fname === "" || lname === "") {
+        error.textContent = "Please fill in both fields.";
+        form.classList.add("shake");
+
+        // Remove shake effect after animation completes
+        setTimeout(() => {
+          form.classList.remove("shake");
+        }, 400);
+
+        return false;
+      }
+
+      error.textContent = "";
+      return true;
+    }
+  </script>
+
+</body>
+</html>

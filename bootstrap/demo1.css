@@ -1,0 +1,16 @@
+.mydiv{
+    background-color: blueviolet;
+}
+.mydev{
+    background-color: beige;
+}
+div h1{
+   color: chartreuse;  
+}
+.maindiv{
+display: flex;
+justify-content: space-between;
+gap: 20px; /* modern way to add space */
+padding: 20px;
+
+}

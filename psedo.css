@@ -1,0 +1,41 @@
+/* 🔹 Pseudo-CLASS examples */
+button:hover {
+    background-color: green;
+    color: white;
+  }
+  
+  li:nth-child(2) {
+    color: red;
+  }
+  
+  h1:active {
+    color: orange;
+  }
+  
+  ul li:first-child {
+    font-weight: bold;
+  }
+  
+  /*  Pseudo-ELEMENT examples */
+  p::first-letter {
+    font-size: 2em;
+    color: blue;
+  }
+  
+  p::after {
+    content: "hi";
+    color: green;
+  }
+  
+  h1::before {
+    content: "... ";
+  }
+  p::first-line {
+    font-weight: bold;
+    color: red;
+    font-size: 20px;
+  }
+  body{
+    background-image: url(csstask.jpg);
+    background-repeat: no-repeat;
+  }
