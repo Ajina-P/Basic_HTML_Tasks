@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>2 Cards Example</title>
+  <style>
+    .container {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      padding: 20px;
+    }
+
+    .card {
+      width: 250px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      padding: 16px;
+      box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .card img {
+      width: 100%;
+      border-radius: 6px;
+    }
+
+    .card h3 {
+      margin-top: 10px;
+      font-size: 20px;
+    }
+
+    .card p {
+      font-size: 14px;
+      color: #555;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <div class="card">
+      <img src="https://via.placeholder.com/250x150" alt="Image 1">
+      <h3>Card Title 1</h3>
+      <p>This is a simple card with some example text content.</p>
+    </div>
+    <div class="card">
+      <img src="https://via.placeholder.com/250x150" alt="Image 2">
+      <h3>Card Title 2</h3>
+      <p>This is another simple card with some more text content.</p>
+    </div>
+  </div>
+
+</body>
+</html>

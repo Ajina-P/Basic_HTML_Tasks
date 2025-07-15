@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>🧠 DOM Practice – 20 Tasks</title>
+  <style>
+    body { font-family: Arial; padding: 20px; }
+    section { border: 1px solid #ccc; padding: 15px; margin: 15px 0; }
+    ul, li { margin: 5px 0; }
+    .highlight { background: yellow; }
+    .big-image { width: 200px; height: 150px; border: 1px solid #000; }
+    .box { width: 100px; height: 100px; border: 1px solid black; margin-top: 10px; }
+    .dropdown { display: none; background: #eee; padding: 10px; margin-top: 5px; }
+    .active { background-color: yellow; font-weight: bold; }
+  </style>
+</head>
+<body>
+
+<h1>🧠 DOM Practice Problems</h1>
+
+<!-- 1️⃣ Background Color Changer -->
+<section>
+  <h3>1️⃣ Change Background Color</h3>
+  <button onclick="document.body.style.backgroundColor = '#e0f7fa'">Change Background</button>
+</section>
+
+<!-- 2️⃣ Show/Hide Paragraph -->
+<section>
+  <h3>2️⃣ Show/Hide Paragraph</h3>
+  <p id="para2">This is a toggle paragraph.</p>
+  <button onclick="para2.style.display = para2.style.display === 'none' ? 'block' : 'none'">Toggle</button>
+</section>
+
+<!-- 3️⃣ Highlight List Item -->
+<section>
+  <h3>3️⃣ Highlight Clicked List Item</h3>
+  <ul id="highlightList">
+    <li>Item 1</li><li>Item 2</li><li>Item 3</li>
+  </ul>
+</section>
+
+<!-- 4️⃣ Sum Form -->
+<section>
+  <h3>4️⃣ Add Two Numbers</h3>
+  <input id="num1" type="number" placeholder="Num 1">
+  <input id="num2" type="number" placeholder="Num 2">
+  <button onclick="sumTwo()">Add</button>
+  <p id="sumResult"></p>
+</section>
+
+<!-- 5️⃣ Add Item to List -->
+<section>
+  <h3>5️⃣ Add to List</h3>
+  <input id="listInput" type="text">
+  <button onclick="addToList()">Add</button>
+  <ul id="list"></ul>
+</section>
+
+<!-- 6️⃣ Increase/Decrease Counter -->
+<section>
+  <h3>6️⃣ Counter</h3>
+  <p id="counter">0</p>
+  <button onclick="changeCount(1)">Increase</button>
+  <button onclick="changeCount(-1)">Decrease</button>
+</section>
+
+<!-- 7️⃣ Toggle Text Color -->
+<section>
+  <h3>7️⃣ Toggle Text Color</h3>
+  <p id="textColor">Change my color</p>
+  <button onclick="toggleColor()">Toggle Color</button>
+</section>
+
+<!-- 8️⃣ Uppercase/Lowercase -->
+<section>
+  <h3>8️⃣ Uppercase & Lowercase</h3>
+  <p id="caseText">Change my case</p>
+  <button onclick="changeCase('upper')">Uppercase</button>
+  <button onclick="changeCase('lower')">Lowercase</button>
+</section>
+
+<!-- 9️⃣ Alert Parent UL ID -->
+<section>
+  <h3>9️⃣ Alert Parent UL ID</h3>
+  <ul id="parentList">
+    <li onclick="alert(this.parentElement.id)">Click Me 1</li>
+    <li onclick="alert(this.parentElement.id)">Click Me 2</li>
+  </ul>
+</section>
+
+<!-- 🔟 To-do with Delete -->
+<section>
+  <h3>🔟 To-do List with Delete</h3>
+  <input id="todoInput" type="text">
+  <button onclick="addTodo()">Add</button>
+  <ul id="todoList"></ul>
+</section>
+
+<!-- 🔢 Char Counter -->
+<section>
+  <h3>🔢 Character Counter (Max 100)</h3>
+  <textarea id="charArea" maxlength="100" oninput="charCount()"></textarea>
+  <p id="charCount">100 characters left</p>
+</section>
+
+<!-- 1️⃣2️⃣ Welcome Form -->
+<section>
+  <h3>1️⃣2️⃣ Welcome Form</h3>
+  <input id="name" placeholder="Name">
+  <input id="email" placeholder="Email">
+  <button onclick="submitForm()">Submit</button>
+  <p id="formMsg"></p>
+</section>
+
+<!-- 1️⃣3️⃣ Font Size Change -->
+<section>
+  <h3>1️⃣3️⃣ Font Size</h3>
+  <p id="fontPara" style="font-size:16px;">Resize me</p>
+  <button onclick="changeFontSize(2)">Increase</button>
+  <button onclick="changeFontSize(-2)">Decrease</button>
+</section>
+
+<!-- 1️⃣4️⃣ Swap Text -->
+<section>
+  <h3>1️⃣4️⃣ Swap Text</h3>
+  <p id="p1">Hello</p>
+  <p id="p2">World</p>
+  <button onclick="swapText()">Swap</button>
+</section>
+
+<!-- 1️⃣5️⃣ Color Picker -->
+<section>
+  <h3>1️⃣5️⃣ Color Picker</h3>
+  <input type="color" onchange="document.getElementById('colorBox').style.backgroundColor = this.value">
+  <div class="box" id="colorBox"></div>
+</section>
+
+<!-- 1️⃣6️⃣ Live Clock -->
+<section>
+  <h3>1️⃣6️⃣ Live Clock</h3>
+  <p id="clock"></p>
+</section>
+
+<!-- 1️⃣7️⃣ Image Preview -->
+<section>
+  <h3>1️⃣7️⃣ Hover to Preview</h3>
+  <img src="https://via.placeholder.com/50" onmouseover="showBig(this.src)" />
+  <img src="https://via.placeholder.com/51" onmouseover="showBig(this.src)" />
+  <img src="https://via.placeholder.com/52" onmouseover="showBig(this.src)" />
+  <div><img id="bigImage" class="big-image" src="" alt="Preview" /></div>
+</section>
+
+<!-- 1️⃣8️⃣ Search Highlight -->
+<section>
+  <h3>1️⃣8️⃣ Search and Highlight</h3>
+  <input id="searchInput" placeholder="Search word">
+  <button onclick="highlightWord()">Search</button>
+  <p id="searchText">JavaScript DOM manipulation is powerful and flexible.</p>
+</section>
+
+<!-- 1️⃣9️⃣ Count Children -->
+<section>
+  <h3>1️⃣9️⃣ Count Children</h3>
+  <div id="parentDiv">
+    <span>Child 1</span>
+    <span>Child 2</span>
+    <span>Child 3</span>
+  </div>
+  <button onclick="countChildren()">Count</button>
+  <p id="childCount"></p>
+</section>
+
+<!-- 2️⃣0️⃣ Dropdown Toggle -->
+<section>
+  <h3>2️⃣0️⃣ Dropdown Toggle</h3>
+  <button onclick="toggleDropdown()">Toggle Menu</button>
+  <div class="dropdown" id="dropdownMenu">
+    <p>Menu Item 1</p>
+    <p>Menu Item 2</p>
+  </div>
+</section>
+
+<script>
+  // 3 Highlight list item
+  document.querySelectorAll("#highlightList li").forEach(li => {
+    li.addEventListener("click", () => {
+      document.querySelectorAll("#highlightList li").forEach(el => el.classList.remove("active"));
+      li.classList.add("active");
+    });
+  });
+
+  // 4 Sum
+  function sumTwo() {
+    const a = parseFloat(document.getElementById("num1").value);
+    const b = parseFloat(document.getElementById("num2").value);
+    document.getElementById("sumResult").textContent = "Sum: " + (a + b);
+  }
+
+  // 5 Add to list
+  function addToList() {
+    const val = document.getElementById("listInput").value;
+    if (val) {
+      const li = document.createElement("li");
+      li.textContent = val;
+      document.getElementById("list").appendChild(li);
+      document.getElementById("listInput").value = "";
+    }
+  }
+
+  // 6 Counter
+  function changeCount(n) {
+    const p = document.getElementById("counter");
+    p.textContent = parseInt(p.textContent) + n;
+  }
+
+  // 7 Toggle color
+  function toggleColor() {
+    const p = document.getElementById("textColor");
+    p.style.color = p.style.color === "red" ? "black" : "red";
+  }
+
+  // 8 Change case
+  function changeCase(type) {
+    const p = document.getElementById("caseText");
+    p.textContent = type === "upper" ? p.textContent.toUpperCase() : p.textContent.toLowerCase();
+  }
+
+  // 🔟 To-do
+  function addTodo() {
+    const val = document.getElementById("todoInput").value;
+    if (val) {
+      const li = document.createElement("li");
+      li.innerHTML = `${val} <button onclick="this.parentElement.remove()">❌</button>`;
+      document.getElementById("todoList").appendChild(li);
+      document.getElementById("todoInput").value = "";
+    }
+  }
+
+  // 🔢 Char count
+  function charCount() {
+    const area = document.getElementById("charArea");
+    const remaining = 100 - area.value.length;
+    document.getElementById("charCount").textContent = `${remaining} characters left`;
+  }
+
+  // 1️⃣2 Welcome form
+  function submitForm() {
+    const name = document.getElementById("name").value.trim();
+    const email = document.getElementById("email").value.trim();
+    if (!name || !email) {
+      alert("Please fill all fields!");
+    } else {
+      document.getElementById("formMsg").textContent = `Welcome, ${name}!`;
+    }
+  }
+
+  // 1️⃣3 Font size
+  function changeFontSize(change) {
+    const p = document.getElementById("fontPara");
+    let size = parseInt(window.getComputedStyle(p).fontSize);
+    p.style.fontSize = (size + change) + "px";
+  }
+
+  // 1️⃣4 Swap text
+  function swapText() {
+    const p1 = document.getElementById("p1");
+    const p2 = document.getElementById("p2");
+    [p1.textContent, p2.textContent] = [p2.textContent, p1.textContent];
+  }
+
+  // 1️⃣6 Clock
+  function updateClock() {
+    const now = new Date();
+    document.getElementById("clock").textContent = now.toLocaleTimeString();
+  }
+  setInterval(updateClock, 1000);
+  updateClock();
+
+  // 1️⃣7 Preview
+  function showBig(src) {
+    document.getElementById("bigImage").src = src;
+  }
+
+  // 1️⃣8 Highlight search
+  function highlightWord() {
+    const word = document.getElementById("searchInput").value.trim();
+    const text = "JavaScript DOM manipulation is powerful and flexible.";
+    const result = word ? text.replace(new RegExp(word, "gi"), match => `<span class="highlight">${match}</span>`) : text;
+    document.getElementById("searchText").innerHTML = result;
+  }
+
+  // 1️⃣9 Count children
+  function countChildren() {
+    const count = document.getElementById("parentDiv").children.length;
+    document.getElementById("childCount").textContent = `Children count: ${count}`;
+  }
+
+  // 2️⃣0 Toggle dropdown
+  function toggleDropdown() {
+    const menu = document.getElementById("dropdownMenu");
+    menu.style.display = menu.style.display === "block" ? "none" : "block";
+  }
+</script>
+</body>
+</html>

@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login New</title>
+<style>
+    body {
+    margin: 0;
+  padding: 0;
+    background: url('https://images.unsplash.com/photo-1506744038136-46273834b3fb?ixlib=rb-4.0.3&auto=format&fit=crop&w=1950&q=80') no-repeat center center fixed;
+    background-size: cover;
+    }
+
+     h2 {
+        text-align: center;
+        /* font-weight: normal; */
+        /* padding: 10px; */
+        margin-top: 50px;
+       }
+
+
+    .full {
+        width: 350px;
+        margin: 30px auto;
+        background: rgba(255, 255, 255, 0.2);
+        padding: 30px;
+        border-radius: 5px;
+        /* text-align: center; */
+        color: #fff;
+        backdrop-filter: blur(5px);
+    }
+
+
+    .tabs {
+        display: flex;
+        justify-content: center;
+        margin-bottom: 20px;
+    }
+
+    .tabs div {
+        padding: 10px 30px;
+    }
+
+    .tabs .active {
+        background:#4A3C8C;
+    }
+
+    input{
+        width: 90%;
+        padding: 10px;
+        margin: 10px 0;
+        border: none; 
+    }
+
+/* Prevent checkbox from being affected by global input rule */
+input[type="checkbox"] {
+  width: auto;
+  margin: 0;
+  padding: 0;
+}
+
+/* Style the label nicely */
+.remember {
+  font-size: 12px;
+  color: black;
+  display: inline-flex; /* Keep label and checkbox in one line */
+  align-items: center;
+  gap: 4px;
+}
+ button.signin {
+        width: 100%;
+        padding: 10px;
+        border: none;
+        background: #4A3C8C;
+        color: #fff;
+        cursor: pointer;
+        border-radius: 3px;
+        margin: 10px 0;
+    }
+
+    .forgot {
+        font-size: 12px;
+        text-decoration: none;
+        color: #fff;
+    }
+
+    button {
+        width: 45%;
+        padding: 10px;
+        border: none;
+        margin: 5px;
+        border-radius: 3px;
+        color: #fff;
+    }
+
+    .twitter {
+        background: #55acee;
+    }
+
+    .facebook {
+        background: #3b5998;
+    }
+
+    footer {
+        font-size: 10px;
+    }
+
+</style>
+</head>
+<body>
+<h2 >Flat Tab Forms</h2>
+<div class="full">
+    <div class="tabs">
+      <div class="active">Sign In</div>
+      <div>Sign Up</div>
+    </div>
+    <form>
+        <label for="email" style="color: black;">Email</label><br>
+        <input type="email" placeholder="Johnsmith@gmail.com" id="email" required>
+        <label for="pass" style="color: black;">Password</label><br>
+        <input type="password" placeholder="Password" id="pass"  required><br>
+        
+        <label class="remember">
+            <input type="checkbox" checked>
+                Remember me
+        </label>
+        
+        <button type="submit" class="signin">Sign In</button>
+        <a href="#" class="forgot">Forgot Your Password?</a><br><br>
+         <div class="buttons">
+            <button class="twitter">Sign In with Twitter</button>
+            <button class="facebook">Sign In with Facebook</button>
+        </div>
+    </form>
+</div>
+  <footer style="text-align: center; color: white">
+    <p>© 2016 Flat Tab Forms. All Rights Reserved | Design by W3layouts</p>
+  </footer>
+</body>
+</html>

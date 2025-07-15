@@ -1,0 +1,71 @@
+
+.grid-container3 {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+  font-style: italic;
+}
+
+
+.grid-container3 img {
+  width: 60px;
+  height: 60px;
+  margin-top: 20px;
+}
+
+
+.services1 {
+  width: 300px;
+  height: auto;
+  text-align: center;
+  padding: 20px;
+  border-radius: 10px;
+  background-color: rgba(255, 255, 255, 0.85);
+  transition: transform 0.3s ease;
+  overflow: hidden;
+}
+
+
+.icon1 {
+  width: 100%;
+  min-height: 250px;
+  border-radius: 10px;
+  background-color: chocolate;
+  color: azure;
+  padding: 15px;
+  box-sizing: border-box;
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+/* On hover: icon box slightly scales */
+.icon1:hover {
+  transform: scale(1.05);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+
+.read-more-btn {
+  margin-top: 15px;
+  padding: 10px 20px;
+  background-color: #6b4f3b;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 16px;
+  cursor: pointer;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease, background-color 0.3s ease;
+}
+
+
+.icon1:hover .read-more-btn {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.read-more-btn:hover {
+  background-color: #4a3525;
+}

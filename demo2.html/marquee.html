@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    @keyframes marquee {
+  from {
+    transform: translatey(100%);
+  }
+  to {
+    transform: translatey(-100%);
+  }
+    }
+.marquee-text{
+    display: inline-block;
+  white-space: nowrap;
+  overflow: hidden;
+  animation: marquee 5s linear infinite;
+
+    }
+
+</style>
+<body>
+    <div class="marquee-text">
+        <h1> hloo world</h1>
+    </div>
+</body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>jQuery Show and Hide Task</title>
+  <!-- jQuery CDN -->
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <style>
+    #myParagraph {
+      display: none; /* Initially hidden */
+      font-size: 18px;
+      color: #333;
+      margin-top: 20px;
+    }
+
+    #toggleBtn {
+      padding: 10px 20px;
+      background-color: royalblue;
+      color: white;
+      border: none;
+      cursor: pointer;
+      font-size: 16px;
+      border-radius: 5px;
+    }
+  </style>
+</head>
+<body>
+
+<div style="text-align: center; margin-top: 100px;">
+  <button id="toggleBtn">Show Message</button>
+  <p id="myParagraph">🎉 Hello! This paragraph is shown using jQuery!</p>
+</div>
+
+<script>
+  $(document).ready(function () {
+    $('#toggleBtn').click(function () {
+      $('#myParagraph').toggle(); // Show or hide paragraph
+      
+      // Change button text based on visibility
+      if ($('#myParagraph').is(':visible')) {
+        $(this).text('Hide Message');
+      } else {
+        $(this).text('Show Message');
+      }
+    });
+  });
+</script>
+
+</body>
+</html>

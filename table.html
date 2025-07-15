@@ -61,5 +61,78 @@
     </tr>
   </table>
 
+  <br>
+  <br>
+  <!-- services section -->
+<section class="services-section" style="margin-top: 10px;">
+  <div class="services-background">
+    <div class="services-container">
+  
+      <div class="service-card">
+        <i class="fas fa-mug-hot" style="font-size: 30px; color: #6f4e37;"></i>
+        <h3>Fresh Brew</h3>
+        <p>We serve freshly brewed artisan coffee.</p>
+        <button class="read-more-btn">Read More</button>
+      </div>
+  
+      <div class="service-card">
+        <i class="fas fa-seedling" style="font-size: 30px; color: #6f4e37;"></i>
+        <h3>Organic Beans</h3>
+        <p>Sourced directly from organic farms for rich flavor.</p>
+        <button class="read-more-btn">Read More</button>
+      </div>
+  
+      <div class="service-card">
+        <i class="fas fa-coffee" style="font-size: 30px; color: #6f4e37;"></i>
+        <h3>Signature Blends</h3>
+        <p>Unique blends that elevate your coffee experience.</p>
+        <button class="read-more-btn">Read More</button>
+      </div>
+  
+    </div>
+  </div>
+</section>
+
+<style>
+  .service-card {
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s ease;
+  }
+  
+  .read-more-btn {
+    position: absolute;
+    bottom: -50px;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 8px 20px;
+    background-color: #6f4e37;
+    color: white;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    opacity: 0;
+  }
+  
+  .service-card:hover {
+    background-color: #f5f5f5; /* Change card color on hover */
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+  }
+  
+  .service-card:hover .read-more-btn {
+    bottom: 20px;
+    opacity: 1;
+  }
+  
+  .service-card:hover i {
+    color: #8b5a2b; /* Change icon color on hover */
+  }
+  
+  .service-card:hover h3 {
+    color: #6f4e37; /* Change heading color on hover */
+  }
+</style>
 </body>
 </html>

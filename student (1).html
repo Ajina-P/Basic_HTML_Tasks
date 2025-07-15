@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" /> <!-- Sets character encoding -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" /> <!-- Makes page responsive -->
+  <title>Student Details</title> <!-- Page title -->
+
+  <!-- Inline CSS for styling the form and table -->
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f0f0f0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh; /* Full screen height */
+    }
+
+    .container {
+      background: #fff;
+      padding: 25px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      width: 400px;
+    }
+
+    h2 {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    .input-group input {
+      width: 100%;
+      padding: 10px;
+      margin: 8px 0;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+
+    button {
+      padding: 10px 15px;
+      background: #4CAF50;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      margin-top: 10px;
+      cursor: pointer;
+      width: 100%;
+    }
+
+    table {
+      width: 100%;
+      margin-top: 20px;
+      border-collapse: collapse;
+    }
+
+    th, td {
+      padding: 8px;
+      border: 1px solid #ddd;
+      text-align: center;
+    }
+
+    .action-btn {
+      background: transparent;
+      border: none;
+      cursor: pointer;
+      margin: 0 5px;
+    }
+
+    .edit {
+      color: blue;
+    }
+
+    .delete {
+      color: red;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Main container -->
+  <div class="container">
+    <h2>Student Details</h2>
+
+    <!-- Input fields for student data -->
+    <div class="input-group">
+      <input type="text" id="name" placeholder="Student Name" /> <!-- Name input -->
+      <input type="number" id="age" placeholder="Age" />         <!-- Age input -->
+      <input type="text" id="studentClass" placeholder="Class" /> <!-- Class input -->
+      <button id="submitBtn">Add Student</button> <!-- Add/Update button -->
+    </div>
+
+    <!-- Table to display the list of students -->
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Age</th>
+          <th>Class</th>
+          <th>Actions</th> <!-- Edit/Delete buttons -->
+        </tr>
+      </thead>
+      <tbody id="studentTableBody"></tbody> <!-- Dynamic table rows will be inserted here -->
+    </table>
+  </div>
+
+  <!-- JavaScript section -->
+  <script>
+    // Initialize student list from local storage or empty array
+    let students = JSON.parse(localStorage.getItem('students')) || [];
+
+    // Variable to track if we're editing an existing student
+    let editIndex = null;
+
+    // Get input fields and button by ID
+    const nameInput = document.getElementById('name');
+    const ageInput = document.getElementById('age');
+    const classInput = document.getElementById('studentClass');
+    const submitBtn = document.getElementById('submitBtn');
+    const tableBody = document.getElementById('studentTableBody');
+
+    // Load students from localStorage when page loads
+    window.onload = () => {
+      renderStudents();
+    };
+
+    // Function to render all students in the table
+    function renderStudents() {
+      tableBody.innerHTML = ""; // Clear table first
+
+      students.forEach((student, index) => {
+        const row = document.createElement('tr'); // Create a new table row
+
+        // Fill row with student data and buttons
+        row.innerHTML = `
+          <td>${student.name}</td>
+          <td>${student.age}</td>
+          <td>${student.class}</td>
+          <td>
+            <button class="action-btn edit" onclick="editStudent(${index})">✏️</button>
+            <button class="action-btn delete" onclick="deleteStudent(${index})">❌</button>
+          </td>
+        `;
+        tableBody.appendChild(row); // Add row to table
+      });
+    }
+
+    // Save current student list to local storage
+    function saveToLocalStorage() {
+      localStorage.setItem('students', JSON.stringify(students));
+    }
+
+    // Clear the input fields after submission or cancel
+    function clearForm() {
+      nameInput.value = "";
+      ageInput.value = "";
+      classInput.value = "";
+    }
+
+    // Function to add a new student or update an existing one
+    function addOrUpdateStudent() {
+      const name = nameInput.value.trim();
+      const age = ageInput.value.trim();
+      const studentClass = classInput.value.trim();
+
+      // Check if all fields are filled
+      if (!name || !age || !studentClass) {
+        alert("Please fill all fields.");
+        return;
+      }
+
+      const student = { name, age, class: studentClass }; // Create student object
+
+      // If editIndex is null, add new student
+      if (editIndex === null) {
+        students.push(student);
+      } else {
+        students[editIndex] = student; // Otherwise, update existing
+        editIndex = null; // Reset edit index
+        submitBtn.textContent = "Add Student"; // Change button label back
+      }
+
+      saveToLocalStorage(); // Save data
+      renderStudents();     // Refresh the table
+      clearForm();          // Clear the form
+    }
+
+    // Load data into form for editing
+    function editStudent(index) {
+      const student = students[index]; // Get selected student
+      nameInput.value = student.name;
+      ageInput.value = student.age;
+      classInput.value = student.class;
+      editIndex = index; // Store index to update later
+      submitBtn.textContent = "Update Student"; // Change button label
+    }
+
+    // Delete student by index
+    function deleteStudent(index) {
+      if (confirm("Are you sure you want to delete this student?")) {
+        students.splice(index, 1); // Remove 1 element at index
+        saveToLocalStorage();      // Update storage
+        renderStudents();          // Refresh table
+      }
+    }
+
+    // Attach click event to the Add/Update button
+    submitBtn.addEventListener('click', addOrUpdateStudent);
+  </script>
+</body>
+
+</html>

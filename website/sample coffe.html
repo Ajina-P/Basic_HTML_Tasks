@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sample Coffee Shop</title>
+    <style>
+        /* Reset and Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: #f5f5f5;
+            color: #333;
+            line-height: 1.6;
+        }
+        
+        a {
+            text-decoration: none;
+            color: inherit; /*  */
+        }
+        
+        /* Header Styles */
+        header {
+            background-color: #fff;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 100;
+        }
+        
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #6F4E37;
+        }
+        
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+        }
+        
+        .nav-links a:hover {
+            color: #6F4E37;
+        }
+        
+        /* Hero Section */
+        .hero {
+            height: 100vh;
+            background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://images.unsplash.com/photo-1498804103079-a6351b050096?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 0 1rem;
+            margin-top: 60px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero-content {
+            max-width: 800px;
+            position: relative;
+        }
+        
+        .hero-text {
+            transition: transform 0.5s ease-in-out;
+        }
+        
+        .hero-text h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+        
+        .hero-text p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+        }
+        
+        .btn {
+            display: inline-block;
+            background-color: #6F4E37;
+            color: white;
+            padding: 0.8rem 1.5rem;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+            border: none;
+            cursor: pointer;
+            font-size: 1rem;
+        }
+        
+        .btn:hover {
+            background-color: #5a3d2a;
+        }
+        
+        .hero-buttons {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+        
+        .hero-btn {
+            background: none;
+            border: none;
+            color: white;
+            font-size: 2rem;
+            cursor: pointer;
+            opacity: 0.7;
+            transition: opacity 0.3s;
+        }
+        
+        .hero-btn:hover {
+            opacity: 1;
+        }
+        
+        /* Menu Section */
+        .menu {
+            padding: 4rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 3rem;
+            font-size: 2rem;
+            color: #6F4E37;
+        }
+        
+        .menu-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+        
+        .menu-item {
+            background-color: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s;
+        }
+        
+        .menu-item:hover {
+            transform: translateY(-5px);
+        }
+        
+        .menu-item img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+        
+        .menu-item-content {
+            padding: 1.5rem;
+        }
+        
+        .menu-item h3 {
+            margin-bottom: 0.5rem;
+            font-size: 1.3rem;
+        }
+        
+        .menu-item p {
+            color: #666;
+            margin-bottom: 1rem;
+        }
+        
+        .price {
+            font-weight: bold;
+            color: #6F4E37;
+            font-size: 1.2rem;
+        }
+        
+        /* About Section */
+        .about {
+            background-color: #6F4E37;
+            color: white;
+            padding: 4rem 2rem;
+        }
+        
+        .about-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        
+        .about-text {
+            max-width: 800px;
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+        
+        /* Contact Section */
+        .contact {
+            padding: 4rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+        
+        .contact-info, .contact-form {
+            background-color: white;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+        }
+        
+        .contact-info h3, .contact-form h3 {
+            margin-bottom: 1.5rem;
+            color: #6F4E37;
+        }
+        
+        .contact-info p {
+            margin-bottom: 1rem;
+        }
+        
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+        }
+        
+        .form-group input, .form-group textarea {
+            width: 100%;
+            padding: 0.8rem;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+        
+        .form-group textarea {
+            height: 150px;
+        }
+        
+        /* Footer */
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 2rem;
+            margin-top: 2rem;
+        }
+        
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        .social-links a {
+            font-size: 1.5rem;
+            transition: color 0.3s;
+        }
+        
+        .social-links a:hover {
+            color: #6F4E37;
+        }
+        
+        @media (max-width: 768px) {
+            .navbar {
+                flex-direction: column;
+                padding: 1rem;
+            }
+            
+            .nav-links {
+                margin-top: 1rem;
+                gap: 1rem;
+            }
+            
+            .hero-text h1 {
+                font-size: 2rem;
+            }
+            
+            .hero-text p {
+                font-size: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+     
+        <nav class="navbar">
+            <div class="logo">Sample Coffee</div>
+            <div class="nav-links">
+                <a href="#home">Home</a>
+                <a href="#menu">Menu</a>
+                <a href="#about">About</a>
+                <a href="#contact">Contact</a>
+            </div>
+        </nav>
+    </header>
+    
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <div class="hero-text active">
+                <h1>Welcome to Sample Coffee</h1>
+                <p>Discover the finest coffee blends crafted with passion and precision. Every cup tells a story.</p>
+                <a href="#menu" class="btn">View Our Menu</a>
+            </div>
+            <div class="hero-text">
+                <h1>Premium Quality Beans</h1>
+                <p>We source our coffee beans from the best farms around the world to ensure exceptional flavor.</p>
+                <a href="#about" class="btn">Our Story</a>
+            </div>
+            <div class="hero-text">
+                <h1>Perfect Brew Every Time</h1>
+                <p>Our expert baristas prepare each cup with care to deliver the perfect coffee experience.</p>
+                <a href="#contact" class="btn">Visit Us</a>
+            </div>
+            <div class="hero-buttons">
+                <button class="hero-btn prev-btn">❮</button>
+                <button class="hero-btn next-btn">❯</button>
+            </div>
+        </div>
+    </section>
+    
+    <section id="menu" class="menu">
+        <h2 class="section-title">Our Menu</h2>
+        <div class="menu-grid">
+            <div class="menu-item">
+                <img src="https://images.unsplash.com/photo-1517701550927-30cf4ba1dba5?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Espresso">
+                <div class="menu-item-content">
+                    <h3>Espresso</h3>
+                    <p>A strong, concentrated coffee served in a small cup.</p>
+                    <span class="price">$3.50</span>
+                </div>
+            </div>
+            
+            <div class="menu-item">
+                <img src="https://images.unsplash.com/photo-1512568400610-62da28bc8a13?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Cappuccino">
+                <div class="menu-item-content">
+                    <h3>Cappuccino</h3>
+                    <p>Espresso with steamed milk and a silky layer of foam.</p>
+                    <span class="price">$4.50</span>
+                </div>
+            </div>
+            
+            <div class="menu-item">
+                <img src="https://images.unsplash.com/photo-1517701550927-30cf4ba1dba5?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Latte">
+                <div class="menu-item-content">
+                    <h3>Latte</h3>
+                    <p>Espresso with a generous amount of steamed milk.</p>
+                    <span class="price">$4.75</span>
+                </div>
+            </div>
+            
+            <div class="menu-item">
+                <img src="https://images.unsplash.com/photo-1568649929103-28ffbefaca1e?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Cold Brew">
+                <div class="menu-item-content">
+                    <h3>Cold Brew</h3>
+                    <p>Smooth coffee brewed cold for 12 hours for low acidity.</p>
+                    <span class="price">$4.00</span>
+                </div>
+            </div>
+            
+            <div class="menu-item">
+                <img src="https://images.unsplash.com/photo-1517701550927-30cf4ba1dba5?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Americano">
+                <div class="menu-item-content">
+                    <h3>Americano</h3>
+                    <p>Espresso diluted with hot water for a milder taste.</p>
+                    <span class="price">$3.75</span>
+                </div>
+            </div>
+            
+            <div class="menu-item">
+                <img src="https://images.unsplash.com/photo-1568649929103-28ffbefaca1e?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Mocha">
+                <div class="menu-item-content">
+                    <h3>Mocha</h3>
+                    <p>Espresso with chocolate and steamed milk, topped with whipped cream.</p>
+                    <span class="price">$5.00</span>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section id="about" class="about">
+        <div class="about-container">
+            <h2 class="section-title">Our Story</h2>
+            <div class="about-text">
+                <p>Founded in 2010, Sample Coffee has been serving the community with premium quality coffee sourced from ethical farms around the world. Our baristas are trained to craft each cup with care and precision.</p>
+                <p>We believe in sustainability, quality, and creating a welcoming space for coffee lovers to gather and enjoy their favorite brew.</p>
+            </div>
+            <a href="#contact" class="btn">Visit Us</a>
+        </div>
+    </section>
+    
+    <section id="contact" class="contact">
+        <h2 class="section-title">Contact Us</h2>
+        <div class="contact-grid">
+            <div class="contact-info">
+                <h3>Visit Our Cafe</h3>
+                <p>123 Coffee Street</p>
+                <p>Brewville, CA 90210</p>
+                <p>United States</p>
+                <br>
+                <p>Phone: (123) 456-7890</p>
+                <p>Email: info@samplecoffee.com</p>
+                <br>
+                <p>Hours:</p>
+                <p>Monday-Friday: 7am-7pm</p>
+                <p>Saturday-Sunday: 8am-6pm</p>
+            </div>
+            
+            <div class="contact-form">
+                <h3>Send Us a Message</h3>
+                <form>
+                    <div class="form-group">
+                        <label for="name">Name</label>
+                        <input type="text" id="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Message</label>
+                        <textarea id="message" required></textarea>
+                    </div>
+                    <button type="submit" class="btn">Send Message</button>
+                </form>
+            </div>
+        </div>
+    </section>
+    
+    <footer>
+        <div class="social-links">
+            <a href="#">FB</a>
+            <a href="#">IG</a>
+            <a href="#">TW</a>
+            <a href="#">YT</a>
+        </div>
+        <p>&copy; 2023 Sample Coffee. All rights reserved.</p>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const heroTexts = document.querySelectorAll('.hero-text');
+            const prevBtn = document.querySelector('.prev-btn');
+            const nextBtn = document.querySelector('.next-btn');
+            let currentIndex = 0;
+            
+            // Show only the active text
+            function updateHeroText() {
+                heroTexts.forEach((text, index) => {
+                    text.classList.toggle('active', index === currentIndex);
+                });
+            }
+            
+            // Next button click
+            nextBtn.addEventListener('click', function() {
+                currentIndex = (currentIndex + 1) % heroTexts.length;
+                updateHeroText();
+            });
+            
+            // Previous button click
+            prevBtn.addEventListener('click', function() {
+                currentIndex = (currentIndex - 1 + heroTexts.length) % heroTexts.length;
+                updateHeroText();
+            });
+            
+            // Auto-rotate every 5 seconds
+            setInterval(function() {
+                currentIndex = (currentIndex + 1) % heroTexts.length;
+                updateHeroText();
+            }, 5000);
+        });
+    </script>
+</body>
+</html>
