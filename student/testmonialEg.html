@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grand Coffee</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+        header {
+            display: flex; 
+            align-items: center; 
+            justify-content: space-between; 
+            width: 100%;
+            padding: 20px 30px; 
+            background-color: rgb(44, 5, 5);
+            color: white;
+        }
+        header #logo {
+            width: 150px; 
+            height: auto; 
+        }
+        ul {
+            display: flex;
+            justify-content: flex-end; 
+            list-style: none;
+            padding: 0; 
+            margin: 0; 
+        }
+        ul li {
+            margin: 0 5px; 
+        }
+        ul li a {
+            text-decoration: none; 
+            color: white; 
+        }
+        ul li a:hover {
+            color: gray; 
+        }
+        ul li a:focus{
+            color: orangered;
+        }
+        ul li a:hover{
+            color: orangered;
+        }
+
+
+
+.banner {
+    background-image: url('/flex/grid/images-for-grandcoffee-website/banner-bg.png');
+    background-attachment: scroll;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    text-align: left;
+    color: white;
+}
+
+.content {
+    width: 700px;
+}
+.content2{
+    width: 400px;
+}
+
+.h1 {
+    font-size: 4rem;
+    font-weight: bold;
+}
+
+.h2 {
+    font-size: 3rem;
+    color: black;
+}
+
+p {
+    margin-top: 10px;
+    font-size: 1rem;
+    line-height: 1.5;
+}
+
+.learn-more {
+    background: black;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    margin-top: 20px;
+    cursor: pointer;
+    font-size: 10px;
+}
+
+.navigation {
+    position: absolute;
+    bottom: 20px;
+    left: 45%;
+    
+}
+
+.navigation button {
+    background: white;
+    border: none;
+    padding: 15px;
+    margin: 5px;
+    cursor: pointer;
+}
+.prev img,.next img{
+width: 20px;
+}
+.About-section{
+    margin-top: 90px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+ .about-content{
+    width: 500px;
+    
+    
+}
+.About-section h1{
+    color: orangered;
+}
+
+.services {
+    background-attachment: fixed;
+    height: 100vh;
+    padding: 50px 20px;
+            text-align: center;
+            background-image: url('images-for-grandcoffee-website/services-bg.png');
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+}
+
+.card-container {
+    display: flex;
+            justify-content: center;
+            gap: 50px;
+            margin-top: 100px;
+}
+
+.card {
+    width: 250px;
+    padding: 30px;
+    text-align: center;
+    background-color: rgb(229, 112, 29);
+    border-radius: 4px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    position: relative;
+    
+}
+.service-head{
+    color: orangered;
+    font-size: 40px;
+}
+.card img{
+    width:60px;
+}
+.button {
+    display: none;
+    background-color: black;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+.card:hover{
+background-color: white;
+
+}
+.card:hover .button {
+    display: inline-block;
+}
+.testimonial-container {
+    position: relative;
+    width: 80%;
+    margin: auto;
+    padding: 20px;
+    font-family: Arial, sans-serif;
+    
+    margin-top: 100px
+}
+
+.testimonial-box {
+    position: relative;
+    padding-left:30px ;
+    padding-right:30px ;
+    padding-bottom:30px ;
+    background: white;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    margin-top: 60px;
+}
+
+.testimonial-box::before,
+.testimonial-box::after {
+    content: "";
+    position: absolute;
+    width: 80px;
+    height: 135px;
+    border: 3px solid black;
+}
+
+.testimonial-box::before {
+    top: 0;
+    left: 0;
+    border-right: none;
+    border-bottom: none;
+}
+
+.testimonial-box::after {
+    bottom: 0;
+    right: 0;
+    border-left: none;
+    border-top: none;
+}
+.author-name{
+    color: orangered;
+    margin-left: 80px;
+}
+
+.testimonial-heading {
+    color: orangered;
+    font-size: 34px;
+    font-weight: bold;
+    text-align: left;
+}
+
+.testimonial-content {
+    margin-top: 10px;
+    font-size: 16px;
+    text-align: left;
+    line-height: 1.6;
+}
+.contact {
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    gap: 5px; 
+    padding: 40px 0;
+}
+.contact-form{
+background-image: url("images-for-grandcoffee-website/img-9.png");
+
+}
+.contact-form, .contact-map {
+    width: 50%;
+    height: 400px;
+    text-align: center;
+}
+
+.contact-form form {
+    width: 80%;
+    margin: auto;
+}
+
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 10px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+}
+
+.contact-form button {
+    width: 100%;
+    padding: 12px;
+    background-color: orangered;
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.map-container {
+    width: 100%;
+    height: 400px;
+    border-radius: 10px;
+    
+}
+
+iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+.footer {
+    background-color: #333;
+    color: white;
+    padding: 40px 20px;
+    display: flex;
+    justify-content: space-around; 
+    align-items: flex-start;
+    flex-wrap: wrap;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+    height: 260px;
+}
+
+
+.contact {
+    margin-bottom: 50px; 
+}
+
+.footer div {
+    width: 22%;
+    text-align: left;
+}
+
+.footer h4 {
+    margin-bottom: 10px;
+    font-size: 18px;
+}
+
+.footer p, .footer ul {
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+.footer ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer ul li {
+    margin-bottom: 5px;
+}
+
+.footer ul li a {
+    color: white;
+    text-decoration: none;
+}
+
+.footer ul li a:hover {
+    text-decoration: underline;
+}
+
+
+
+
+    </style>
+</head>
+<body>
+    <header>
+        <img id="logo" src="/flex/grid/images-for-grandcoffee-website/logo.png" alt="Grand Coffee Logo">
+        <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">About Us</a></li>
+            <li><a href="#">gallery</a></li>
+            <li><a href="#">services</a></li>
+            <li><a href="#">Contact us</a></li>
+            <li><img src="/flex//grid/images-for-grandcoffee-website/search-icon.png" width="10px" height="10px"></li>
+        </ul>
+    </header>
+
+    <section class="banner">
+    
+            <div class="content">
+                <h2 class="h1">Outstanding</h2>
+                <h1 class="h2">Coffee Shop</h1>
+                <div class="content2">
+                <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour.</p>
+                </div>
+                <button class="learn-more">LEARN MORE</button>
+            </div>
+            <div class="navigation">
+                <button class="prev"><img src="/flex/grid/images-for-grandcoffee-website/back.png" alt=""></button>
+                <button class="next"><img src="/flex/grid/images-for-grandcoffee-website/next.png" alt=""></button>
+            </div>
+        
+    </section>
+
+    <section class="About-section">
+        <div class="about-content">
+        <h1>About Us</h1>
+        <p>Full cleaning and housekeeping services for companies and households.Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text.Lorem Ipsum is simply</p>
+        </div>
+        <img src="/flex/grid/images-for-grandcoffee-website/about-img.png" width="300px" height="300px">
+    </section>
+    
+  
+<section class="services" style="margin-top: 250px;">
+    <h1 class="service-head">Services</h1>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint iste,</p>
+    <div class="card-container">
+        <div class="card">
+            <img src="/flex/grid/images-for-grandcoffee-website/icon1.png">
+            <h2>Original Coffee</h2>
+            <p>Exercitation ullamcorper suscipit lobortis nisl ut aliquip ex ea.</p>
+            <button class="button">Read More</button>
+        </div>
+        <div class="card">
+            <img src="/flex/grid/images-for-grandcoffee-website/icon2.png">
+            <h2>20 Coffee Flavors</h2>
+            <p>Exercitation ullamcorper suscipit lobortis nisl ut aliquip ex ea.</p>
+            <button class="button">Read More</button>
+        </div>
+        <div class="card">
+            <img src="/flex/grid/images-for-grandcoffee-website/icon3.png">
+            <h2>Pleasant Ambience</h2>
+            <p>Exercitation ullamcorper suscipit lobortis nisl ut aliquip ex ea.</p>
+            <button class="button">Read More</button>
+        </div>
+    </div>
+</section>
+
+
+<section class="testimonial-container">
+<h2 class="testimonial-heading">Testimonial</h2>
+<p>Even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to</p>
+<div class="testimonial-box">
+    <h3 class="author-name">MONILA  <img src="/flex/grid/images-for-grandcoffee-website/quotes.jpg" width="17px"></h3>
+    <p class="testimonial-content">
+        Many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, 
+        by injected humour, or randomised words which don't look even slightly believable. If you are going to use a 
+        passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of the text.
+    </p>
+</div>
+</section>
+
+
+<section >
+<h1 style="color: orangered; text-align: center; font-size: 30px;">Contact Us</h1>
+
+<section id="contact" class="contact">
+<div class="contact-form">
+  
+    <form>
+        <input type="text" placeholder="Your Name" required>
+        <input type="email" placeholder="Your Email" required>
+        <textarea placeholder="Your Message" rows="5" required></textarea>
+        <button type="submit">Send Message</button>
+    </form>
+</div>
+<div class="contact-map">
+    <div class="map-container">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d31306.033675627048!2d75.8382592!3d11.242700800000001!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sin!4v1738216877149!5m2!1sen!2sin" loading="lazy"></iframe>
+    </div>
+</div>
+</section>
+</section>
+
+
+<footer class="footer">
+    <div>
+        <h4>About Us</h4>
+        <p>Grand Coffee is a local coffee shop that specializes in freshly brewed coffee and delightful pastries.</p>
+    </div>
+    <div>
+        <h4>Quick Links</h4>
+        <ul>
+            <li><a href="#about">About</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#gallery">Gallery</a></li>
+            <li><a href="#testimonial">Testimonial</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </div>
+    <div>
+        <h4>Contact Us</h4>
+        <p>Email: info@grandcoffee.com</p>
+        <p>Phone: (123) 456-7890</p>
+    </div>
+    <div>
+        <h4>Follow Us</h4>
+        <ul>
+            <li><a href="#">Facebook</a></li>
+            <li><a href="#">Instagram</a></li>
+            <li><a href="#">Twitter</a></li>
+        </ul>
+    </div>
+</footer>
+
+
+
+
+
+
+</body>
+</html>

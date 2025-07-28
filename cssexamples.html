@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* class selector */
+.firsth1{
+    color: blueviolet;
+    text-align: center;
+}
+/* id selector */
+#firstdiv{
+    width: 100%;
+    height: 600px;
+    background-color: rgb(25, 228, 14);
+}
+ /* element selector */
+
+ img{
+    width: 50%;
+    border: 1px solid black;
+ }
+ #seconddiv{
+    text-align: center;
+    color: rgb(201, 122, 32);
+ }
+  *{
+    background-color: rgb(218, 116, 15);
+  }
+  ul a{
+     color: blue;
+     background-color: aqua;
+  }
+  .div1 .p1{
+    background-color: aqua;
+  }
+.div1 #p2{
+    background-color: rgb(232, 43, 22);
+  }
+  .p1::before{
+    content: "Eg psedo class";
+    font-weight: 4px;
+  }
+  img:hover{
+    height: 500px;
+    width: 300px;
+  }
+  button:hover{
+    background-color: rgb(15, 238, 63);
+  }
+  .parent > h1 {
+    color: blueviolet;
+  }
+ 
+    </style>
+</head>
+<body>
+    <h1 class="firsth1"> CSS Example</h1>
+    <p>Lorem ipsuhm dolor sit amet consectetur adipisicing elit. Nihil maiores minus, iusto sed animi sint temporibus nobis. Repudiandae voluptate sit possimus, at quibusdam veniam modi consequuntur rerum amet aliquam ex.Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil maiores minus, iusto sed animi sint temporibus nobis. Repudiandae voluptate sit possimus, at quibusdam veniam modi consequuntur rerum amet aliquam ex.
+    </p>
+
+    <div id="firstdiv">
+        <h1> contents in a div</h1> 
+        <img src="https://png.pngtree.com/thumb_back/fh260/background/20230720/pngtree-3d-illustration-of-coffee-cup-and-beans-image_3722286.jpg" class="">       
+    </div>
+
+    <div id="seconddiv">
+        <h1>
+             Our courses
+        </h1>
+        <ul>
+            <li><a href="">MERN</a></li>
+            <li>Python</li>
+             <li>DataScience</li>
+         </ul>
+         <div class="div1">
+            <p class="p1">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Assumenda perspiciatis sunt expedita nostrum dolor voluptatem praesentium adipisci quasi saepe! Eum aliquam quisquam saepe quaerat, tenetur distinctio dolorem qui temporibus incidunt!</p>
+
+            <p id="p2">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Assumenda perspiciatis sunt expedita nostrum dolor voluptatem praesentium adipisci quasi saepe! Eum aliquam quisquam saepe quaerat, tenetur distinctio dolorem qui temporibus incidunt!</p>
+             <button> Read More</button>
+
+         </div>
+
+         <div class="parent">
+          <h1> child selector EG</h1>
+          <p style="color: brown;">Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur, est omnis. Non, totam pariatur. Eius, nulla, voluptatum illo voluptates autem sed maxime aliquid repellat illum, repellendus optio enim sunt neque!</p>
+         </div>
+
+    </div>
+
+</body>
+</html>

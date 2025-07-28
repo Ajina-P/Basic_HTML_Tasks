@@ -35,5 +35,12 @@ button:hover {
     color: red;
     font-size: 20px;
   }
-
+  p{
+    color:hsl(240, 100%, 50%) ;
+  }
+ body{
+  background-color: rgb(20, 233, 162);
+  background-image: url('coffee-cafe.jpg');
+  
+ }
    

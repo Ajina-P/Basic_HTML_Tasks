@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Media Query Task</title>
+  <style>
+    /* * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      width: 100%;
+    }
+
+    h3 {
+      text-align: center;
+      margin: 10px 0;
+    } */
+
+  
+    img {
+      width: 100%;
+      height: auto;
+      /* display: block; */
+    }
+
+   
+    .pic2 {
+      width: 100%; 
+      background: #f0f0f0; 
+    }
+
+    
+    @media (max-width: 1024px) {
+      .pic2 {
+        width: 100%; 
+      }
+    }
+
+   
+    @media (max-width: 786px) {
+      .pic2 {
+        width: 100%; 
+        padding: 0; 
+      }
+    }
+  </style>
+</head>
+<body>
+  <h3>Media Query Task</h3>
+
+  <!-- pic1 (unaffected by media queries) -->
+  <div class="pic1">
+    <img src="../coffee_website/media/banner-bg.png" alt="Image 1">
+  </div>
+
+  <!-- pic2 (changes width based on screen size) -->
+  <div class="pic2">
+    <img src="../coffee_website/media/banner-bg.png" alt="Image 2">
+  </div>
+
+  <!-- pic3 (unaffected by media queries) -->
+  <div class="pic3">
+    <img src="../coffee_website/media/banner-bg.png" alt="Image 3">
+  </div>
+</body>
+</html>

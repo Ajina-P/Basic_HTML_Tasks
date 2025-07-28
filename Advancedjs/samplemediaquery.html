@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Responsive Layout</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<style>
+    * {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Arial, sans-serif;
+}
+
+header, nav, footer {
+  background-color: #333;
+  color: white;
+  text-align: center;
+  padding: 15px;
+}
+
+main {
+  display: flex;
+  gap: 10px;
+  padding: 10px;
+}
+
+section {
+  padding: 20px;
+  background-color: #ddd;
+  flex: 1;
+}
+
+/* 📱 Small screens (mobile phones) */
+@media (max-width: 600px) {
+  main {
+    flex-direction: column;
+  }
+
+  nav {
+    font-size: 14px;
+  }
+
+  .right {
+    display: none; /* Hide sidebar */
+  }
+}
+
+/* 📱📱 Medium screens (tablets) */
+@media (min-width: 601px) and (max-width: 992px) {
+  main {
+    flex-direction: row;
+  }
+
+  .right {
+    display: none; /* Hide sidebar on tablets */
+  }
+
+  nav {
+    font-size: 16px;
+  }
+}
+
+/* 💻 Large screens (desktops) */
+@media (min-width: 993px) {
+  .right {
+    display: block;
+  }
+
+  nav {
+    font-size: 18px;
+  }
+}
+
+</style>
+<body>
+  <header>Responsive Header</header>
+
+  <nav>Navigation Menu</nav>
+
+  <main>
+    <section class="left">Left Content</section>
+    <section class="middle">Main Content</section>
+    <section class="right"></section>
+  </main>
+
+  <footer>Footer</footer>
+</body>
+</html>
