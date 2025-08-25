@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <title>🧠 DOM Practice – 20 Tasks</title>
   <style>
-    body { font-family: Arial; padding: 20px; }
+    
     section { border: 1px solid #ccc; padding: 15px; margin: 15px 0; }
     ul, li { margin: 5px 0; }
     .highlight { background: yellow; }
@@ -12,6 +12,18 @@
     .box { width: 100px; height: 100px; border: 1px solid black; margin-top: 10px; }
     .dropdown { display: none; background: #eee; padding: 10px; margin-top: 5px; }
     .active { background-color: yellow; font-weight: bold; }
+    body {
+      background-color: white;
+      color: black;
+      transition: background-color 0.3s, color 0.3s;
+      font-family: Arial; padding: 20px;
+    }
+
+    /* Dark mode class */
+    .dark-mode {
+      background-color: black;
+      color: white;
+    }
   </style>
 </head>
 <body>
@@ -180,6 +192,11 @@
   </div>
 </section>
 
+<!-- Create a toggle button that switches the page between light and dark modes by changing the body class. -->
+<h2>Create a toggle button that switches the page between light and dark modes by changing the body class.</h2>
+<button id="Modechanger" style="height: 40px; width: 250px; margin-bottom: 30px;">Light/Dark Mode</button>
+<br><br>
+
 <script>
   // 3 Highlight list item
   document.querySelectorAll("#highlightList li").forEach(li => {
@@ -300,6 +317,12 @@
     const menu = document.getElementById("dropdownMenu");
     menu.style.display = menu.style.display === "block" ? "none" : "block";
   }
+
+  // Create a toggle button that switches the page between light and dark modes by changing the body class.
+    const modeChanger = document.getElementById('Modechanger');
+    modeChanger.addEventListener('click', () => {
+    document.body.classList.toggle('dark-mode');
+    });
 </script>
 </body>
 </html>

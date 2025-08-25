@@ -1,0 +1,322 @@
+.nb {
+    display:grid;
+    grid-template-columns: auto 1fr;
+    align-items: center;
+    background-color: rgb(26, 25, 25);
+    color: white;
+    padding: 15px 30px;
+
+}
+.nav-link{
+    display: flex;
+    justify-content: flex-end;
+    gap: 20px;
+
+}
+
+body {
+    margin: 0; 
+    cursor:default;
+
+}
+.icon {
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bolder;
+    color: white;
+    font-size: xx-large;
+    margin: 0; 
+    padding: 0;
+    justify-content: space-between;
+    gap: 10px;
+    margin-right: auto;
+    display: flex;
+    align-items: center;
+}
+.toplink{
+    color: white;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size:x-large;
+    text-decoration: none;
+}
+.toplink:hover {
+    color: rgb(236, 128, 27);            
+    transition: 0.3s ease;    
+}
+
+.banner{
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    background-image: url('media/banner-bg.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding-top: 100px;
+    padding-left: 75px;
+}
+
+.banner-content {
+    width: 800px;          
+    height: 500px;         
+    background-color: transparent;  
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    align-items: flex-start;
+}
+.top-text{
+    color: rgb(36, 36, 36);
+    font-size:65px;
+    font-weight:lighter;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    padding: 0;
+    margin: 1%;
+}
+.bot-text{
+    color: white;
+    font-size:80px;
+    font-weight: bolder;
+    padding: 5;
+    margin: 1%;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+.para{
+    font-size: 180%;
+}
+.bt{
+    background-color: rgb(34, 34, 34);
+    width: 200px;
+    height: 60px;
+    color: white;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    margin-top: 20px;
+}
+.about{
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 10px;
+    margin: 100px;
+}
+.ab-content{
+    width: 40%;
+    padding-bottom: 180px;
+    font-size: 20px;
+    font-weight: lighter;
+    color: rgb(102, 101, 101);
+    font-family: Arial, Helvetica, sans-serif;
+}
+.ab-content h1{
+   
+    color: rgb(247, 127, 16);
+    font-size: 40px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+.abotimg{
+    margin-right: 30%;
+    margin-top: 10;
+}
+.gallery{
+    padding: 50px;
+}
+.gallery h1{
+    display: flex;
+    justify-content: center;
+     color: rgb(247, 127, 16);
+    font-size: 40px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+.gallery p{
+     font-size: 20px;
+    font-weight: lighter;
+    color: rgb(102, 101, 101);
+    font-family: Arial, Helvetica, sans-serif;
+    display: flex;
+    justify-content: center;
+    
+}
+.images{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: auto auto auto;
+    gap: 10px;
+    padding-left: 60px;
+}
+.im{
+    margin-bottom: 20px;
+}
+.im:hover{
+    opacity: 0.3;
+    
+}
+
+.test h1{
+    display: flex;
+    justify-content: left;
+     color: rgb(247, 127, 16);
+     padding-left: 100px;
+    font-size: 40px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+.test p{
+     font-size: 19px;
+    font-weight: lighter;
+    color: rgb(102, 101, 101);
+    font-family: Arial, Helvetica, sans-serif;
+    display: flex;
+    justify-content: left;
+    margin-left: 50px;
+}
+.tbox{
+   border-style: solid;
+   margin: 10%;
+   padding: 30px;
+}
+.cont1{
+    display: flex;
+    justify-content: center;
+     color: rgb(247, 127, 16);
+     padding-left: 100px;
+    font-size: 30px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    
+}
+.contact{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    
+}
+.form-section {
+    background-image: url('../media/img-10.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    padding-left: 20px;
+    color: white;
+    width: 100%;
+}
+input, textarea {
+    width: 70%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 20px;
+    box-sizing: border-box;
+    
+}
+.send{
+    background-color: orangered;
+    border-radius: 20px;
+    border-color: orangered;
+    width: 100px;
+    height: 50px;
+    color: white;
+    
+}
+
+.form-group{
+  
+    padding: 5px;
+    display: grid;
+    
+}
+.map{
+    width:50%;
+}
+.footer-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  max-width: 1200px;
+  margin: auto;
+}
+
+.footer-column {
+  flex: 1 1 200px;
+  margin: 10px;
+}
+
+.footer-column h3 {
+  font-size: 20px;
+  margin-bottom: 15px;
+}
+
+.footer-column ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-column ul li {
+  margin-bottom: 10px;
+}
+
+.footer-column ul li a {
+  color: white;
+  text-decoration: none;
+}
+
+.footer-column ul li a:hover {
+  color: rgb(231, 143, 34);
+}
+
+.footer-column p {
+  color: #ccc;
+  font-size: 14px;
+}
+
+.footer-bottom {
+  text-align: center;
+  padding-top: 30px;
+  border-top: 1px solid #444;
+  font-size: 14px;
+  color: #ccc;
+}
+.services {
+    background-image: url('media/services-bg.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    color: white;
+}
+.card1{
+    background-color: orangered;
+    width: 25%;
+    align-items: center;
+    height: 250px;
+    padding-left: 40px;
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.3s;
+    padding-bottom: -30%;
+    padding-right:40px ;
+
+}
+.cards{
+    display: flex;
+    justify-content: space-between;
+    padding: 5%;
+}
+.card-btn {
+  position: absolute;
+  bottom: -60px; 
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #1e1e1e;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 25px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  z-index: 1;
+}
+
+.card1:hover .card-btn {
+  bottom: 20px; 
+  opacity: 1;
+ 
+}
+.card1:hover{
+    padding-bottom: 30%;
+}
+

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 20px;
+    }
+    .section {
+      margin-bottom: 30px;
+      border-bottom: 1px solid #ccc;
+      padding-bottom: 20px;
+    }
+    #colorBox {
+      width: 100px;
+      height: 100px;
+      background-color: lightblue;
+      margin-top: 10px;
+    }
+  </style>
+    
+</head>
+<body>
+    <h1 id="heading"></h1>
+     <button onclick="alert('hiii from js')" >click me</button>
+      <button onclick="submit()">Submit</button>
+      <script src="basics.js"></script>
+
+      
+<!-- 🔹 Problem 1: Change Text -->
+  <div class="section">
+    <h3>Problem 1: Change Text</h3>
+    <p id="textPara">Original text.</p>
+    <button onclick="changeText()">Change Text</button>
+  </div>
+
+  <!-- 🔹 Problem 2: Change Background Color -->
+  <div class="section">
+    <h3>Problem 2: Change Background Color</h3>
+    <div id="colorBox"></div>
+    <button onclick="changeColor()">Change Color</button>
+  </div>
+
+  <!-- 🔹 Problem 3: Hide and Show an Element -->
+  <div class="section">
+    <h3>Problem 3: Hide and Show Paragraph</h3>
+    <p id="hideShowPara">You can hide or show me!</p>
+    <button onclick="hidePara()">Hide</button>
+    <button onclick="showPara()">Show</button>
+  </div>
+
+  <!-- 🔹 Problem 4: Update Input Field -->
+  <div class="section">
+    <h3>Problem 4: Update Input Field</h3>
+    <input type="text" id="inputField" value="Initial value">
+    <button onclick="updateInput()">Update Input</button>
+  </div>
+
+  <!-- 🔹 Problem 5: Display Alert with Element Text -->
+  <div class="section">
+    <h3>Problem 5: Alert Paragraph Text</h3>
+    <p id="alertText">This is some text to alert.</p>
+    <button onclick="showAlert()">Show Alert</button>
+  </div>
+
+
+   
+</body>
+</html>
